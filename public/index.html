@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <style>
+      /* Terminal Styling */
+      body {
+        font-family: "Courier New", Courier, monospace; /* Classic fixed-width font */
+        background-color: #000; /* Black background */
+        color: #00ff00; /* Bright green text */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+      }
+
+      .container {
+        width: 80%;
+        max-width: 600px;
+        text-align: left;
+        border: 1px solid #00ff00;
+        padding: 1rem;
+        border-radius: 5px;
+      }
+
+      .weather {
+        margin-bottom: 1rem;
+      }
+
+      .city-search {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+      }
+
+      .city-search input {
+        background-color: #000;
+        color: #00ff00;
+        border: 1px solid #00ff00;
+        padding: 0.5rem;
+        font-family: "Courier New", Courier, monospace;
+        margin-bottom: 0.5rem;
+      }
+
+      .city-search button {
+        background-color: #000;
+        color: #00ff00;
+        border: 1px solid #00ff00;
+        padding: 0.5rem;
+        font-family: "Courier New", Courier, monospace;
+        cursor: pointer;
+      }
+
+      .city-search button:hover {
+        background-color: #00ff00;
+        color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Weather Dashboard</h1>
+    <div class="container">
+      <div id="weather" class="weather">Loading weather data...</div>
+      <div class="city-search">
+        <input type="text" id="city-input" placeholder="Enter city" />
+        <button id="search-btn">Search</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
