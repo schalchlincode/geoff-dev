@@ -65,11 +65,26 @@
         background-color: #00ff00;
         color: #000;
       }
+
+      @keyframes blink {
+        50% {
+          opacity: 0; /* Make it invisible half the time */
+        }
+      }
+
+      #cursor {
+        font-weight: bold;
+        animation: blink 1s infinite; /* Blink every 1 second */
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <div id="weather" class="weather">Loading weather data...</div>
+      <!-- <div id="weather" class="weather">Loading weather data...</div> -->
+      <div id="weather" class="weather">
+        Loading weather data<span id="cursor">_</span>
+      </div>
+
       <div class="city-search">
         <input type="text" id="city-input" placeholder="Enter city" />
         <button id="search-btn">Search</button>
