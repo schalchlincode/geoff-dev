@@ -8,7 +8,7 @@ async function getWeather(city) {
     const data = await response.json();
     weatherDiv.innerHTML = `
       Location: ${data.location.name}, ${data.location.region}<br>
-      Temperature: ${data.current.temp_c}°C<br>
+      Temperature: ${data.current.temp_f}°F<br>
       Condition: ${data.current.condition.text}
     `;
   } catch (error) {
