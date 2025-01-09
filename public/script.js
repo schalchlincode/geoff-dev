@@ -42,6 +42,30 @@ async function getWeather(city) {
   }
 }
 
+// Function to fetch and display the current day and date
+function displayDate() {
+  const dateContainer = document.getElementById("date-container");
+  const cursor = document.getElementById("date-cursor");
+
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  const currentDate = new Date().toLocaleDateString(undefined, options);
+
+  cursor.style.display = "inline"; // Show blinking cursor
+  dateContainer.innerHTML = `${currentDate}<span id='date-cursor'>_</span>`;
+
+  setTimeout(() => {
+    cursor.style.display = "none"; // Hide blinking cursor after displaying
+  }, 1000); // Keep cursor visible briefly
+}
+
+// Call displayDate on page load
+displayDate();
+
 // Default city on page load
 getWeather("Hutto");
 

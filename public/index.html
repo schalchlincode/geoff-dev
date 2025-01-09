@@ -76,9 +76,55 @@
         font-weight: bold;
         animation: blink 1s infinite; /* Blink every 1 second */
       }
+
+      @keyframes flicker {
+        0%,
+        100% {
+          opacity: 1;
+        } /* Fully visible */
+        5% {
+          opacity: 0.9;
+        } /* Slight dimming */
+        10% {
+          opacity: 0.8;
+        } /* Slight dimming */
+        15% {
+          opacity: 0.85;
+        } /* Back to near-full visibility */
+        20% {
+          opacity: 0.7;
+        } /* Dim again */
+        25% {
+          opacity: 0.9;
+        } /* Almost fully visible */
+        30% {
+          opacity: 0.95;
+        } /* Slightly dim */
+        35%,
+        90% {
+          opacity: 1;
+        } /* Fully visible for the rest */
+      }
+
+      .date {
+        position: absolute;
+        top: 10px; /* Or right: 10px if you want it top-right */
+        left: 10px; /* Remove this if you're using right */
+        font-size: 1.2rem;
+        text-align: left;
+        padding: 5px;
+        background-color: #000; /* Optional: Adds a subtle background */
+        border: 1px solid #00ff00; /* Optional: Matches the theme */
+        border-radius: 5px; /* Optional: Rounds the corners */
+        animation: flicker 3s infinite; /* Add flickering animation */
+      }
     </style>
   </head>
   <body>
+    <div id="date-container" class="date">
+      Loading date<span id="date-cursor">_</span>
+    </div>
+
     <div class="container">
       <div id="weather" class="weather">
         Loading weather data<span id="cursor">_</span>
