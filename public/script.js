@@ -43,7 +43,7 @@ async function getWeather(city) {
 }
 
 // Default city on page load
-getWeather("Austin");
+getWeather("Hutto");
 
 // Handle city search
 document.getElementById("search-btn").addEventListener("click", () => {

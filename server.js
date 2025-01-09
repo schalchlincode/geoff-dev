@@ -12,7 +12,7 @@ app.use(express.static("public"));
 
 // Define a route to fetch weather data
 app.get("/weather", async (req, res) => {
-  const city = req.query.city || "Austin";
+  const city = req.query.city || "Hutto";
   const apiKey = process.env.WEATHER_API_KEY;
 
   try {
@@ -27,6 +27,7 @@ app.get("/weather", async (req, res) => {
 });
 
 // Start the server
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+// Start the server
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running at http://<Your-Pixelbook-IP>:${PORT}`);
 });
